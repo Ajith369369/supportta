@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./database/connection");
+const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
@@ -18,8 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-app.use(userRoutes);
+app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 
 
 app.listen(PORT, () => {

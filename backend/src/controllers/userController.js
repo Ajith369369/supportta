@@ -1,23 +1,26 @@
 const User = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
-// ✅ POST: Register a new user
+// Register user
 const registerUser = async (req, res) => {
   try {
     const { username, email, password, profilePhoto } = req.body;
 
-    // ✅ Check if user already exists
+    // Check if user already exists
     // The return statement inside the if (existingUser) block prevents the execution of the rest of the try block if the user already exists.
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       return res.status(400).json({ error: "User already exists" });
     }
 
-    // ✅ Create user
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    // Create user
     const newUser = new User({
       username,
       email,
-      password,
+      password: hashedPassword,
       profilePhoto,
     });
 
@@ -33,35 +36,88 @@ const registerUser = async (req, res) => {
   }
 };
 
+// Login user
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // ✅ Check if user exists
-    const user = await User.findOne({ email, password });
+    // Check if user exists
+    const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ error: "Invalid email or password" });
     }
 
-    // ✅ Generate JWT token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: "2d", // Token expires in 7 days
-    });
+    // Compare password using bcrypt
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid email or password" });
+    }
+
+    // Generate tokens
+    const { accessToken, refreshToken } = generateTokens(user);
 
     res.status(200).json({
       message: "Login successful",
       user: {
         id: user._id,
-        name: user.name,
+        username: user.username,
         email: user.email,
-        token,
+        accessToken,
+        refreshToken,
       },
     });
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Internal Server Error", details: error.message });
+    res.status(500).json({
+      error: "Server Error",
+      details: error.message,
+    });
   }
 };
 
-module.exports = { registerUser, loginUser };
+// Update profile
+const updateUserProfile = async (req, res) => {
+  try {
+    if (req.user.id !== req.params.id) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    const updatedUser = await User.findByIdAndUpdate(
+      req.params.id,
+      {
+        username: req.body.username,
+        email: req.body.email,
+        profilePhoto: req.body.profilePhoto,
+      },
+      { new: true }
+    );
+
+    res.status(200).json({
+      message: "Profile updated",
+      user: updatedUser,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+// Delete profile
+const deleteUserProfile = async (req, res) => {
+  try {
+    if (req.user.id !== req.params.id) {
+      return res.status(403).json({ message: "Access denied" });
+    }
+
+    await User.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({ message: "Profile deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
+module.exports = {
+  registerUser,
+  loginUser,
+  updateUserProfile,
+  deleteUserProfile,
+};
