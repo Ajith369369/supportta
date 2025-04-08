@@ -1,6 +1,8 @@
 const Product = require("../models/productModel");
 const Brand = require("../models/brandModel");
+const User = require("../models/userModel");
 
+// Add product
 exports.addProduct = async (req, res) => {
   try {
     const { productName, description, price, category, brand, productImage, addedBy } = req.body;
@@ -76,3 +78,51 @@ exports.deleteProduct = async (req, res) => {
   }
 };
 
+// All products with filters
+exports.getAllProductsAddedByAllUsers = async (req, res) => {
+  const { brand, category, order = "desc" } = req.query;
+  const loggedInUserId = req.user?.id; // Assuming JWT auth middleware is applied
+
+  try {
+    // Get users who have blocked the current user
+    const blockingUsers = await User.find({ blockedUsers: loggedInUserId }).select("_id");
+    const blockedByUserIds = blockingUsers.map(user => user._id);
+
+    // Build query
+    let query = {
+      addedBy: { $nin: blockedByUserIds }, // Exclude products from users who blocked you
+    };
+
+    if (brand) query.brand = brand;
+    if (category) query.category = category;
+
+    // Sorting logic
+    const sortOptions = {};
+    if (sortBy === "price" || sortBy === "product-name") {
+      sortOptions[sortBy === "product-name" ? "productName" : "price"] = order === "asc" ? 1 : -1;
+    } else {
+      sortOptions["createdAt"] = -1; // default sort
+    }
+
+    // Fetch products
+    const products = await Product.find(query)
+      .populate("addedBy", "username")
+      .sort(sortOptions);
+
+    res.status(200).json(products);
+  } catch (error) {
+    res.status(500).json({ error: "Server error", details: error.message });
+  }
+};
+
+// Only my products
+exports.getMyProducts = async (req, res) => {
+  const userId = req.user.id;
+
+  try {
+    const myProducts = await Product.find({ addedBy: userId });
+    res.status(200).json(myProducts);
+  } catch (error) {
+    res.status(500).json({ error: "Server error", details: error.message });
+  }
+};

@@ -5,6 +5,7 @@ const connectDB = require("./database/connection");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const brandRoutes = require("./routes/brandRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 dotenv.config();
 
@@ -23,7 +24,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
 app.use("/api", brandRoutes);
-
+app.use("/api", productRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);

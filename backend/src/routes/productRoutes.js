@@ -1,39 +1,12 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const {
+  getAllProductsAddedByAllUsers,
+  getMyProducts,
+} = require("../controllers/productController");
 
-const productSchema = new mongoose.Schema(
-  {
-    productName: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    description: {
-      type: String,
-      default: "",
-    },
-    price: {
-      type: Number,
-      required: true,
-    },
-    category: {
-      type: String,
-      required: true,
-    },
-    brand: {
-      type: String,
-      required: true,
-    },
-    productImage: {
-      type: String, // URL or file path
-      default: "",
-    },
-    addedBy: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
+const router = express.Router();
 
-module.exports = mongoose.model("Product", productSchema);
+router.get("/products", getAllProductsAddedByAllUsers); // All products with filters
+router.get("/my-products", getMyProducts); // Only my products
+
+module.exports = router;
