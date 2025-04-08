@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const connectDB = require("./database/connection");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const brandRoutes = require("./routes/brandRoutes");
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", brandRoutes);
 
 
 app.listen(PORT, () => {
