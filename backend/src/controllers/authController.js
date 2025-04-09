@@ -1,6 +1,7 @@
 // Token Refresh API
-const generateTokens = require("../utils/generateTokens")
+const generateTokens = require("../utils/generateTokens");
 const jwt = require("jsonwebtoken");
+const User = require("../models/userModel");
 
 exports.refreshAccessToken = async (req, res) => {
   const { refreshToken } = req.body;
@@ -37,4 +38,3 @@ exports.refreshAccessToken = async (req, res) => {
       .json({ error: "Internal server error", details: error.message });
   }
 };
-
