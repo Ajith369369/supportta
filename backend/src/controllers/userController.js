@@ -115,9 +115,43 @@ const deleteUserProfile = async (req, res) => {
   }
 };
 
+const blockUser = async (req, res) => {
+  try {
+    const userToBlock = req.params.userId;
+    const currentUser = await User.findById(req.user.id);
+
+    if (!currentUser.blockedUsers.includes(userToBlock)) {
+      currentUser.blockedUsers.push(userToBlock);
+      await currentUser.save();
+    }
+
+    res.status(200).json({ message: "User blocked successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+const unblockUser = async (req, res) => {
+  try {
+    const userToUnblock = req.params.userId;
+    const currentUser = await User.findById(req.user.id);
+
+    currentUser.blockedUsers = currentUser.blockedUsers.filter(
+      (id) => id.toString() !== userToUnblock
+    );
+    await currentUser.save();
+
+    res.status(200).json({ message: "User unblocked successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 module.exports = {
   registerUser,
   loginUser,
   updateUserProfile,
   deleteUserProfile,
+  blockUser,
+  unblockUser,
 };
