@@ -2,6 +2,8 @@
 
 ## Getting Started
 
+Please note that I did not use APIs to populate the MongoDB database. Instead, I used a seeding script to insert the initial data directly into the database for testing purposes.
+
 ### Prerequisites
 Make sure you have the following installed on your machine:
 - **Node.js** (v20 or higher)
