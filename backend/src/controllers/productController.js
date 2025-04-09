@@ -8,7 +8,7 @@ exports.addProduct = async (req, res) => {
     const { productName, description, price, category, brand, productImage, addedBy } = req.body;
 
     // Check if brand exists
-    const brandDoc = await Brand.find({ brandName: brand });
+    const brandDoc = await Brand.findOne({ brandName: brand });
     if (!brandDoc) {
       return res.status(400).json({ error: "Brand does not exist." });
     }
