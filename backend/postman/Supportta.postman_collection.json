@@ -37,7 +37,144 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "registerUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-lFUySNKwX3L5eGEwGcNcUoVKWhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 08:27:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"User already exists\"\n}"
+						},
+						{
+							"name": "registerUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"117-wFHyhYOIBPNYOUBrP7W3EcVsvAA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:46:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User registered successfully\",\n    \"user\": {\n        \"username\": \"Max\",\n        \"email\": \"max@example.com\",\n        \"password\": \"$2b$10$rITFP5xSTuJuDDV1ZMRmVuZtpY2kKDWtdIjKqViGWQ.CMfzqs8yPC\",\n        \"profilePhoto\": \"https://example.com/photos/max.jpg\",\n        \"blockedUsers\": [],\n        \"_id\": \"67f641f932d72418fc5813e7\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "loginUser",
@@ -67,7 +204,80 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "loginUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImlhdCI6MTc0NDE5MTE5NCwiZXhwIjoxNzQ0Nzk1OTk0fQ.A926WAoBLF9ln7UyZwZ98p8iQ3Yqfj9UJjX2WRHZLgE; Max-Age=604800; Path=/; Expires=Wed, 16 Apr 2025 09:33:14 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"150-UGU+S+nhv0gSYS6RYl5jB3ylhYE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:33:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login successful\",\n    \"user\": {\n        \"id\": \"67f5fa1d2a23b635bfe1162b\",\n        \"username\": \"Max\",\n        \"email\": \"max@example.com\",\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxMTk0LCJleHAiOjE3NDQxOTIwOTR9.lOu9QXnzPKTohvk-jKz785S1iA57l4aeeoV7-zH9ldY\"\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "refreshToken",
@@ -79,7 +289,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImlhdCI6MTc0NDE3OTEzOCwiZXhwIjoxNzQ0NzgzOTM4fQ.g2k8YQOZwFb1Zxih9szq5EF7UqaMWrMLkq5rFGRSKxY\"\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -99,7 +309,146 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "refreshToken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImlhdCI6MTc0NDE5MTQ2NiwiZXhwIjoxNzQ0Nzk2MjY2fQ.y0Fn7qnXuOv-xqg4AUGEOvIc9B4k8x0DNHD_gVUxtlw; Max-Age=604800; Path=/; Expires=Wed, 16 Apr 2025 09:37:46 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "223"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"df-LwzOHEpQ6bKmJznJDTyHIFP6kk8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:37:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxNDY2LCJleHAiOjE3NDQxOTIzNjZ9.hxBjuZMHW2EGMO9M3dbttmLu5ARUd6X2na_6ay-nozA\"\n}"
+						},
+						{
+							"name": "refreshToken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-hq/hT0ORGTkTfyRpVCZ/JB/r8Eg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:49:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"User not found\"\n}"
+						}
+					]
 				},
 				{
 					"name": "updateUserProfile",
@@ -109,7 +458,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVkMjMzOTIzODQ1NWZiNGU2NWFjYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTcwMTAxLCJleHAiOjE3NDQxNzEwMDF9.7CWZEZ7nGFZV0WmUVYKgXsvkVmooRL1iQwf-yd6js9c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxODIyLCJleHAiOjE3NDQxOTI3MjJ9.dTrM-fdYrKTUBZmhBZ3Pxrn4zl_3VMhBI0ydv-P6pak",
 									"type": "string"
 								}
 							]
@@ -118,7 +467,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max1111@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
+							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max222@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,7 +475,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/67f5d2339238455fb4e65acb",
+							"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -135,11 +484,80 @@
 							"path": [
 								"api",
 								"users",
-								"67f5d2339238455fb4e65acb"
+								"67f5fa1d2a23b635bfe1162b"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "updateUserProfile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max222@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"67f5fa1d2a23b635bfe1162b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10d-aAJX9CdRJgOrTe9XuOFrJLmky/I\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:44:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile updated\",\n    \"user\": {\n        \"_id\": \"67f5fa1d2a23b635bfe1162b\",\n        \"username\": \"Max\",\n        \"email\": \"max222@example.com\",\n        \"password\": \"$2b$10$Bt3vTx0RC3Tts1pmzLdEz.3mWMJtq0VqBGzTwudbUTklsI/S5iNYK\",\n        \"profilePhoto\": \"https://example.com/photos/max.jpg\",\n        \"blockedUsers\": [],\n        \"__v\": 2\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "deleteUserProfile",
@@ -149,7 +567,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVkMjMzOTIzODQ1NWZiNGU2NWFjYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTcwMTAxLCJleHAiOjE3NDQxNzEwMDF9.7CWZEZ7nGFZV0WmUVYKgXsvkVmooRL1iQwf-yd6js9c",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxODIyLCJleHAiOjE3NDQxOTI3MjJ9.dTrM-fdYrKTUBZmhBZ3Pxrn4zl_3VMhBI0ydv-P6pak",
 									"type": "string"
 								}
 							]
@@ -166,7 +584,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/67f5d2339238455fb4e65acb",
+							"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -175,11 +593,80 @@
 							"path": [
 								"api",
 								"users",
-								"67f5d2339238455fb4e65acb"
+								"67f5fa1d2a23b635bfe1162b"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "deleteUserProfile",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"67f5fa1d2a23b635bfe1162b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-TkGcC/0+lkh26Mo7bHbw30135PA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:46:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile deleted successfully\"\n}"
+						}
+					]
 				},
 				{
 					"name": "blockUser",
@@ -189,7 +676,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTgwNDY3LCJleHAiOjE3NDQxODEzNjd9.Qksx99C5ioCbu9iFDJzh8ss_iLpLOCJlzzGS-79c5Sk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkyMjY1LCJleHAiOjE3NDQxOTMxNjV9.CR5DS4CKlfNPUcq0Hu73YWA0DqBM3L7iDpWjrjB3W3g",
 									"type": "string"
 								}
 							]
@@ -220,7 +707,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "blockUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/block/67f5c209623f10da06a1cef3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"block",
+										"67f5c209623f10da06a1cef3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-bBqcKmWi+3PFTs0jEDZnV8WhFvU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:51:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User blocked successfully\"\n}"
+						}
+					]
 				},
 				{
 					"name": "unblockUser",
@@ -230,7 +787,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTgwNDY3LCJleHAiOjE3NDQxODEzNjd9.Qksx99C5ioCbu9iFDJzh8ss_iLpLOCJlzzGS-79c5Sk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkyMjY1LCJleHAiOjE3NDQxOTMxNjV9.CR5DS4CKlfNPUcq0Hu73YWA0DqBM3L7iDpWjrjB3W3g",
 									"type": "string"
 								}
 							]
@@ -261,7 +818,77 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "unblockUser",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/users/unblock/67f5c209623f10da06a1cef3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"unblock",
+										"67f5c209623f10da06a1cef3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"29-W6/XNX0CLrwo9GiqynIwZq8oZ8g\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 09:52:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User unblocked successfully\"\n}"
+						}
+					]
 				}
 			]
 		},
