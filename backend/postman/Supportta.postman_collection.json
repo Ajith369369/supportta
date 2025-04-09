@@ -1,0 +1,670 @@
+{
+	"info": {
+		"_postman_id": "67d73435-e75c-4a6d-81f8-3ef90c04eb35",
+		"name": "Supportta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37376017"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "registerUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImlhdCI6MTc0NDE3OTEzOCwiZXhwIjoxNzQ0NzgzOTM4fQ.g2k8YQOZwFb1Zxih9szq5EF7UqaMWrMLkq5rFGRSKxY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVkMjMzOTIzODQ1NWZiNGU2NWFjYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTcwMTAxLCJleHAiOjE3NDQxNzEwMDF9.7CWZEZ7nGFZV0WmUVYKgXsvkVmooRL1iQwf-yd6js9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max1111@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/67f5d2339238455fb4e65acb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"67f5d2339238455fb4e65acb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserProfile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVkMjMzOTIzODQ1NWZiNGU2NWFjYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTcwMTAxLCJleHAiOjE3NDQxNzEwMDF9.7CWZEZ7nGFZV0WmUVYKgXsvkVmooRL1iQwf-yd6js9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/67f5d2339238455fb4e65acb",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"67f5d2339238455fb4e65acb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "blockUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTgwNDY3LCJleHAiOjE3NDQxODEzNjd9.Qksx99C5ioCbu9iFDJzh8ss_iLpLOCJlzzGS-79c5Sk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/block/67f5c209623f10da06a1cef3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"block",
+								"67f5c209623f10da06a1cef3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblockUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTgwNDY3LCJleHAiOjE3NDQxODEzNjd9.Qksx99C5ioCbu9iFDJzh8ss_iLpLOCJlzzGS-79c5Sk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/unblock/67f5c209623f10da06a1cef3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"unblock",
+								"67f5c209623f10da06a1cef3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "getAllBrands",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc1MzY2LCJleHAiOjE3NDQxNzYyNjZ9.9PGF3flLl2I0Q8JBxctP-NvQ56LJC4F9ULOBeGC3134",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/brands/get-all-brands",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"brands",
+								"get-all-brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addBrand",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc1MzY2LCJleHAiOjE3NDQxNzYyNjZ9.9PGF3flLl2I0Q8JBxctP-NvQ56LJC4F9ULOBeGC3134",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brandName\": \"SoundCoreX\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/brands/add-brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"brands",
+								"add-brand"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/add-product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"add-product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/67f5fc52310ad08e4e1a5850",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"67f5fc52310ad08e4e1a5850"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/67f5fc52310ad08e4e1a5850",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"67f5fc52310ad08e4e1a5850"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsAddedByAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc0ODY5LCJleHAiOjE3NDQxNzU3Njl9.fX0jnTkBFheMTstiE8hmIzJc2o500awmV2qGpPWpGxM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/get-all-products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"get-all-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsAddedByAllUsers Params 1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc3Njg5LCJleHAiOjE3NDQxNzg1ODl9.RQaxUKTKIev0LTVsu__LvZYxyHpUt_YOFRH5OFkF5zw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"get-all-products"
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Sony"
+								},
+								{
+									"key": "category",
+									"value": "Electronics"
+								},
+								{
+									"key": "sortBy",
+									"value": "price"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductsAddedByAllUsers Params 2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc3Njg5LCJleHAiOjE3NDQxNzg1ODl9.RQaxUKTKIev0LTVsu__LvZYxyHpUt_YOFRH5OFkF5zw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/get-all-products?sortBy=price&order=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"get-all-products"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "price"
+								},
+								{
+									"key": "order",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyProducts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc0ODY5LCJleHAiOjE3NDQxNzU3Njl9.fX0jnTkBFheMTstiE8hmIzJc2o500awmV2qGpPWpGxM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/products/get-my-products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"get-my-products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
