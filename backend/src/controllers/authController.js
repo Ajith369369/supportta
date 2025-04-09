@@ -1,5 +1,6 @@
 // Token Refresh API
 const generateTokens = require("../utils/generateTokens")
+const jwt = require("jsonwebtoken");
 
 exports.refreshAccessToken = async (req, res) => {
   const { refreshToken } = req.body;
