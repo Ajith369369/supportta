@@ -53,7 +53,7 @@ Your server will start on `http://localhost:8000`.
    - Use the provided `.postman_collection.json` file inside the `postman/` directory.
    - Or click “Import” in Postman and paste this GitHub raw URL:
      ```
-     https://raw.githubusercontent.com/your-username/your-repo-name/main/postman/your-api.postman_collection.json
+     https://github.com/Ajith369369/supportta/blob/main/backend/postman/Supportta.postman_collection.json
      ```
 
 ---
