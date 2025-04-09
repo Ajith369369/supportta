@@ -56,16 +56,24 @@ const loginUser = async (req, res) => {
     // Generate tokens
     const { accessToken, refreshToken } = generateTokens(user);
 
-    res.status(200).json({
-      message: "Login successful",
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email,
-        accessToken,
-        refreshToken,
-      },
-    });
+    // Set refreshToken as HTTP-only cookie
+    res
+      .cookie("refreshToken", refreshToken, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production", // set true in prod
+        sameSite: "Strict", // or "Lax" depending on frontend
+        maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+      })
+      .status(200)
+      .json({
+        message: "Login successful",
+        user: {
+          id: user._id,
+          username: user.username,
+          email: user.email,
+          accessToken,
+        },
+      });
   } catch (error) {
     res.status(500).json({
       error: "Server Error",

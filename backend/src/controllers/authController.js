@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
 exports.refreshAccessToken = async (req, res) => {
-  const { refreshToken } = req.body;
+  const refreshToken = req.cookies.refreshToken;
 
   if (!refreshToken) {
     return res.status(401).json({ error: "Refresh token required" });
@@ -36,13 +36,10 @@ exports.refreshAccessToken = async (req, res) => {
 
         res.status(200).json({
           accessToken,
-          refreshToken: newRefreshToken,
         });
       }
     );
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Internal server error", details: error.message });
+    res.status(500).json({ error: "Server error", details: error.message });
   }
 };

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./database/connection");
+const cookieParser = require("cookie-parser");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const brandRoutes = require("./routes/brandRoutes");
@@ -20,6 +21,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser()); // Before your routes
 
 app.use("/api", authRoutes); // refreshAccessToken 
 app.use("/api", userRoutes); 
