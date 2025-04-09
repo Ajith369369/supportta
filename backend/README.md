@@ -194,8 +194,11 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "username": "john_updated",
-  "email": "john_updated@example.com"
+  "username": "Max",
+  "email": "max222@example.com",
+  "password": "max123",
+  "profilePhoto": "https://example.com/photos/max.jpg",
+  "blockedUsers": []
 }
 ```
 
@@ -203,11 +206,15 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "message": "Profile updated successfully",
+  "message": "Profile updated",
   "user": {
     "_id": "67f5fa1d2a23b635bfe1162b",
-    "username": "john_updated",
-    "email": "john_updated@example.com"
+    "username": "Max",
+    "email": "max222@example.com",
+    "password": "$2b$10$Bt3vTx0RC3Tts1pmzLdEz.3mWMJtq0VqBGzTwudbUTklsI/S5iNYK",
+    "profilePhoto": "https://example.com/photos/max.jpg",
+    "blockedUsers": [],
+    "__v": 2
   }
 }
 ```
@@ -223,7 +230,7 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "message": "User deleted successfully"
+  "message": "Profile deleted successfully"
 }
 ```
 
