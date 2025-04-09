@@ -41,7 +41,7 @@ JWT_REFRESH_SECRET=your_refresh_secret
 ### Run the Server
 
 ```bash
-npm run dev
+npm start
 ```
 
 Your server will start on `http://localhost:8000`.
