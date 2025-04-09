@@ -1,9 +1,5 @@
 # Supportta
 
-Here's a clean and professional `README.md` section you can include in your GitHub project to **clearly guide users** on how to set up, run, and test your API using Postman:
-
----
-
 ## Getting Started
 
 ### Prerequisites
