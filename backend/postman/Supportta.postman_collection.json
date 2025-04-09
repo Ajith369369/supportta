@@ -903,7 +903,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc1MzY2LCJleHAiOjE3NDQxNzYyNjZ9.9PGF3flLl2I0Q8JBxctP-NvQ56LJC4F9ULOBeGC3134",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzMzczLCJleHAiOjE3NDQxOTQyNzN9.RXvth2VIqw3qYj8RB75RtPn_5-ZPB5CUKkCd5MG-rcg",
 									"type": "string"
 								}
 							]
@@ -924,7 +924,67 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getAllBrands",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/brands/get-all-brands",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"brands",
+										"get-all-brands"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1888"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"760-n2uRVtklbCLjjYIdNBEaXrnHSvQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:10:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67f5cdf4133dda43f538a408\",\n        \"brandName\": \"SoundCore\",\n        \"brandLogo\": \"https://example.com/logos/soundcore.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a409\",\n        \"brandName\": \"Nike\",\n        \"brandLogo\": \"https://example.com/logos/nike.png\",\n        \"categories\": [\n            \"Footwear\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a40a\",\n        \"brandName\": \"FitBit\",\n        \"brandLogo\": \"https://example.com/logos/fitbit.png\",\n        \"categories\": [\n            \"Wearables\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a40c\",\n        \"brandName\": \"JBL\",\n        \"brandLogo\": \"https://example.com/logos/jbl.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a40d\",\n        \"brandName\": \"Gaiam\",\n        \"brandLogo\": \"https://example.com/logos/gaiam.png\",\n        \"categories\": [\n            \"Fitness\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a40e\",\n        \"brandName\": \"Logitech\",\n        \"brandLogo\": \"https://example.com/logos/logitech.png\",\n        \"categories\": [\n            \"Accessories\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a40f\",\n        \"brandName\": \"Hydro Flask\",\n        \"brandLogo\": \"https://example.com/logos/hydroflask.png\",\n        \"categories\": [\n            \"Home & Kitchen\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a411\",\n        \"brandName\": \"Sony\",\n        \"brandLogo\": \"https://example.com/logos/sony.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a412\",\n        \"brandName\": \"Bowflex\",\n        \"brandLogo\": \"https://example.com/logos/bowflex.png\",\n        \"categories\": [\n            \"Fitness\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a413\",\n        \"brandName\": \"Samsung\",\n        \"brandLogo\": \"https://example.com/logos/samsung.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a414\",\n        \"brandName\": \"Samsonite\",\n        \"brandLogo\": \"https://example.com/logos/samsonite.png\",\n        \"categories\": [\n            \"Accessories\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cdf4133dda43f538a415\",\n        \"brandName\": \"Philips\",\n        \"brandLogo\": \"https://example.com/logos/philips.png\",\n        \"categories\": [\n            \"Home & Kitchen\"\n        ],\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f60215a0ebd97bf41f1f48\",\n        \"brandName\": \"SoundCoreX\",\n        \"brandLogo\": \"https://example.com/logos/soundcore.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "addBrand",
@@ -934,7 +994,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc1MzY2LCJleHAiOjE3NDQxNzYyNjZ9.9PGF3flLl2I0Q8JBxctP-NvQ56LJC4F9ULOBeGC3134",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzMzczLCJleHAiOjE3NDQxOTQyNzN9.RXvth2VIqw3qYj8RB75RtPn_5-ZPB5CUKkCd5MG-rcg",
 									"type": "string"
 								}
 							]
@@ -943,7 +1003,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"brandName\": \"SoundCoreX\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"raw": "{\r\n    \"brandName\": \"SoundCoreY\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -964,7 +1024,144 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "addBrand",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brandName\": \"SoundCoreX\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/brands/add-brand",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"brands",
+										"add-brand"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-6ImuoVYyZ/+nQaP3EPFbSJqRS/E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:10:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Brand already exists\"\n}"
+						},
+						{
+							"name": "addBrand",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"brandName\": \"SoundCoreY\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/brands/add-brand",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"brands",
+										"add-brand"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-CQDpPxPvjiDFrFDtCdqwobEq0kk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:10:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Brand created successfully\",\n    \"brand\": {\n        \"brandName\": \"SoundCoreY\",\n        \"brandLogo\": \"https://example.com/logos/soundcore.png\",\n        \"categories\": [\n            \"Electronics\"\n        ],\n        \"_id\": \"67f647b3768f0aaf9f7bfb1d\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -979,7 +1176,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -988,7 +1185,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productName\": \"Wireless Headphones\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones Asb\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1009,7 +1206,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "addProduct",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Wireless Headphones Mini\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/add-product",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"add-product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "366"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16e-EV3FeXFPuap4eZC0s9nGxF/HD2Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:11:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product added successfully\",\n    \"product\": {\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": \"67f5fa1d2a23b635bfe1162b\",\n        \"_id\": \"67f647ec768f0aaf9f7bfb20\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "updateProduct",
@@ -1019,7 +1285,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzNzI0LCJleHAiOjE3NDQxOTQ2MjR9.QcQoEFouWBWlDfCtY0VPKB3yMrk-jZNtWOIRHVYlvDQ",
 									"type": "string"
 								}
 							]
@@ -1028,7 +1294,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1036,7 +1302,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/67f5fc52310ad08e4e1a5850",
+							"raw": "http://localhost:8000/api/products/67f647ec768f0aaf9f7bfb20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1045,11 +1311,148 @@
 							"path": [
 								"api",
 								"products",
-								"67f5fc52310ad08e4e1a5850"
+								"67f647ec768f0aaf9f7bfb20"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "updateProduct",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/67f647ec768f0aaf9f7bfb20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"67f647ec768f0aaf9f7bfb20"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-KH4ngqV3S/XmJmUEKpwjFfjZ2wg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:12:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Product not found\"\n}"
+						},
+						{
+							"name": "updateProduct",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/67f647ec768f0aaf9f7bfb20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"67f647ec768f0aaf9f7bfb20"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-+EXVytdsQYs4fYxpuz7R+X3oGgo\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:13:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"You can only edit your own product\"\n}"
+						}
+					]
 				},
 				{
 					"name": "deleteProduct",
@@ -1059,7 +1462,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTczOTE2LCJleHAiOjE3NDQxNzQ4MTZ9.1_0hU1vo_MM0lpd561zdvK04E6meCOBlYUT1fwA--v8",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -1076,7 +1479,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/67f5fc52310ad08e4e1a5850",
+							"raw": "http://localhost:8000/api/products/67f64ab4768f0aaf9f7bfb2f",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1085,11 +1488,148 @@
 							"path": [
 								"api",
 								"products",
-								"67f5fc52310ad08e4e1a5850"
+								"67f64ab4768f0aaf9f7bfb2f"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "deleteProduct",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/67f647ec768f0aaf9f7bfb20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"67f647ec768f0aaf9f7bfb20"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-Xx52dWLbSZRWxl+BXU9sdSMaRW4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:21:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"You can only delete your own product\"\n}"
+						},
+						{
+							"name": "deleteProduct",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/67f64ab4768f0aaf9f7bfb2f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"67f64ab4768f0aaf9f7bfb2f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-a+2htZNpkCDaj0ausIFBiheaYZ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:24:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product deleted successfully\"\n}"
+						}
+					]
 				},
 				{
 					"name": "getAllProductsAddedByAllUsers",
@@ -1102,7 +1642,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc0ODY5LCJleHAiOjE3NDQxNzU3Njl9.fX0jnTkBFheMTstiE8hmIzJc2o500awmV2qGpPWpGxM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -1132,7 +1672,76 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getAllProductsAddedByAllUsers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/get-all-products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"get-all-products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5495"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1577-66Gb4jn3smHIunrfbMfiwu49yq8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:25:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03d\",\n        \"productName\": \"Wireless Headphones\",\n        \"description\": \"Noise cancelling over-ear headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"SoundCore\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.795Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.795Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03e\",\n        \"productName\": \"Running Shoes\",\n        \"description\": \"Lightweight running shoes designed for long-distance comfort.\",\n        \"price\": 89.5,\n        \"category\": \"Footwear\",\n        \"brand\": \"Nike\",\n        \"productImage\": \"https://example.com/images/running-shoes.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.796Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.796Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03f\",\n        \"productName\": \"Smart Watch\",\n        \"description\": \"Fitness tracking watch with heart-rate monitor and GPS.\",\n        \"price\": 149,\n        \"category\": \"Wearables\",\n        \"brand\": \"FitBit\",\n        \"productImage\": \"https://example.com/images/smartwatch.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.796Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.796Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c041\",\n        \"productName\": \"Bluetooth Speaker\",\n        \"description\": \"Portable waterproof speaker with 12 hours of playtime.\",\n        \"price\": 59.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"JBL\",\n        \"productImage\": \"https://example.com/images/bluetooth-speaker.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.947Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.947Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c042\",\n        \"productName\": \"Yoga Mat\",\n        \"description\": \"Non-slip eco-friendly yoga mat with carrying strap.\",\n        \"price\": 25,\n        \"category\": \"Fitness\",\n        \"brand\": \"Gaiam\",\n        \"productImage\": \"https://example.com/images/yoga-mat.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c043\",\n        \"productName\": \"Gaming Mouse\",\n        \"description\": \"RGB wired gaming mouse with 8 programmable buttons.\",\n        \"price\": 39.99,\n        \"category\": \"Accessories\",\n        \"brand\": \"Logitech\",\n        \"productImage\": \"https://example.com/images/gaming-mouse.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c044\",\n        \"productName\": \"Stainless Steel Water Bottle\",\n        \"description\": \"Insulated bottle keeps drinks hot for 12h and cold for 24h.\",\n        \"price\": 18.5,\n        \"category\": \"Home & Kitchen\",\n        \"brand\": \"Hydro Flask\",\n        \"productImage\": \"https://example.com/images/water-bottle.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c046\",\n        \"productName\": \"Wireless Headphones\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c047\",\n        \"productName\": \"Adjustable Dumbbells Set\",\n        \"description\": \"Pair of adjustable dumbbells for home workouts, up to 50 lbs each.\",\n        \"price\": 199.99,\n        \"category\": \"Fitness\",\n        \"brand\": \"Bowflex\",\n        \"productImage\": \"https://example.com/images/dumbbells.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c048\",\n        \"productName\": \"Smart LED TV 43 inch\",\n        \"description\": \"4K Ultra HD Smart LED TV with voice remote.\",\n        \"price\": 379,\n        \"category\": \"Electronics\",\n        \"brand\": \"Samsung\",\n        \"productImage\": \"https://example.com/images/smart-tv.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c049\",\n        \"productName\": \"Laptop Backpack\",\n        \"description\": \"Water-resistant backpack for 15.6” laptops, with USB charging port.\",\n        \"price\": 49.95,\n        \"category\": \"Accessories\",\n        \"brand\": \"Samsonite\",\n        \"productImage\": \"https://example.com/images/backpack.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c04a\",\n        \"productName\": \"Electric Kettle\",\n        \"description\": \"Stainless steel kettle with auto shut-off and 1.7L capacity.\",\n        \"price\": 34.99,\n        \"category\": \"Home & Kitchen\",\n        \"brand\": \"Philips\",\n        \"productImage\": \"https://example.com/images/kettle.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f647ec768f0aaf9f7bfb20\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f64987768f0aaf9f7bfb2a\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getAllProductsAddedByAllUsers Params 1",
@@ -1145,7 +1754,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc3Njg5LCJleHAiOjE3NDQxNzg1ODl9.RQaxUKTKIev0LTVsu__LvZYxyHpUt_YOFRH5OFkF5zw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -1193,7 +1802,94 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getAllProductsAddedByAllUsers Params 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"get-all-products"
+									],
+									"query": [
+										{
+											"key": "brand",
+											"value": "Sony"
+										},
+										{
+											"key": "category",
+											"value": "Electronics"
+										},
+										{
+											"key": "sortBy",
+											"value": "price"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1007"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3ef-uxXJA8+Kx9TBc4cDerX8oJr0BAk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:25:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c046\",\n        \"productName\": \"Wireless Headphones\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f647ec768f0aaf9f7bfb20\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f64987768f0aaf9f7bfb2a\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getAllProductsAddedByAllUsers Params 2",
@@ -1206,7 +1902,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc3Njg5LCJleHAiOjE3NDQxNzg1ODl9.RQaxUKTKIev0LTVsu__LvZYxyHpUt_YOFRH5OFkF5zw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -1246,7 +1942,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getAllProductsAddedByAllUsers Params 2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/get-all-products?sortBy=price&order=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"get-all-products"
+									],
+									"query": [
+										{
+											"key": "sortBy",
+											"value": "price"
+										},
+										{
+											"key": "order",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "5495"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1577-ITPb0GNnFwPxkLKWDab3k6XkwpU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:25:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c044\",\n        \"productName\": \"Stainless Steel Water Bottle\",\n        \"description\": \"Insulated bottle keeps drinks hot for 12h and cold for 24h.\",\n        \"price\": 18.5,\n        \"category\": \"Home & Kitchen\",\n        \"brand\": \"Hydro Flask\",\n        \"productImage\": \"https://example.com/images/water-bottle.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c042\",\n        \"productName\": \"Yoga Mat\",\n        \"description\": \"Non-slip eco-friendly yoga mat with carrying strap.\",\n        \"price\": 25,\n        \"category\": \"Fitness\",\n        \"brand\": \"Gaiam\",\n        \"productImage\": \"https://example.com/images/yoga-mat.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c04a\",\n        \"productName\": \"Electric Kettle\",\n        \"description\": \"Stainless steel kettle with auto shut-off and 1.7L capacity.\",\n        \"price\": 34.99,\n        \"category\": \"Home & Kitchen\",\n        \"brand\": \"Philips\",\n        \"productImage\": \"https://example.com/images/kettle.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c043\",\n        \"productName\": \"Gaming Mouse\",\n        \"description\": \"RGB wired gaming mouse with 8 programmable buttons.\",\n        \"price\": 39.99,\n        \"category\": \"Accessories\",\n        \"brand\": \"Logitech\",\n        \"productImage\": \"https://example.com/images/gaming-mouse.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.948Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.948Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c049\",\n        \"productName\": \"Laptop Backpack\",\n        \"description\": \"Water-resistant backpack for 15.6” laptops, with USB charging port.\",\n        \"price\": 49.95,\n        \"category\": \"Accessories\",\n        \"brand\": \"Samsonite\",\n        \"productImage\": \"https://example.com/images/backpack.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c041\",\n        \"productName\": \"Bluetooth Speaker\",\n        \"description\": \"Portable waterproof speaker with 12 hours of playtime.\",\n        \"price\": 59.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"JBL\",\n        \"productImage\": \"https://example.com/images/bluetooth-speaker.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef4\",\n            \"username\": \"Bob\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.947Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.947Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03e\",\n        \"productName\": \"Running Shoes\",\n        \"description\": \"Lightweight running shoes designed for long-distance comfort.\",\n        \"price\": 89.5,\n        \"category\": \"Footwear\",\n        \"brand\": \"Nike\",\n        \"productImage\": \"https://example.com/images/running-shoes.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.796Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.796Z\"\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03d\",\n        \"productName\": \"Wireless Headphones\",\n        \"description\": \"Noise cancelling over-ear headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"SoundCore\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.795Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.795Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c046\",\n        \"productName\": \"Wireless Headphones\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f647ec768f0aaf9f7bfb20\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f64987768f0aaf9f7bfb2a\",\n        \"productName\": \"Wireless Headphones Mini\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": null,\n        \"__v\": 0\n    },\n    {\n        \"_id\": \"67f5cb83dad77cfa0cb0c03f\",\n        \"productName\": \"Smart Watch\",\n        \"description\": \"Fitness tracking watch with heart-rate monitor and GPS.\",\n        \"price\": 149,\n        \"category\": \"Wearables\",\n        \"brand\": \"FitBit\",\n        \"productImage\": \"https://example.com/images/smartwatch.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef3\",\n            \"username\": \"Alice\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:07.796Z\",\n        \"updatedAt\": \"2025-04-09T01:21:07.796Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c047\",\n        \"productName\": \"Adjustable Dumbbells Set\",\n        \"description\": \"Pair of adjustable dumbbells for home workouts, up to 50 lbs each.\",\n        \"price\": 199.99,\n        \"category\": \"Fitness\",\n        \"brand\": \"Bowflex\",\n        \"productImage\": \"https://example.com/images/dumbbells.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    },\n    {\n        \"_id\": \"67f5cb84dad77cfa0cb0c048\",\n        \"productName\": \"Smart LED TV 43 inch\",\n        \"description\": \"4K Ultra HD Smart LED TV with voice remote.\",\n        \"price\": 379,\n        \"category\": \"Electronics\",\n        \"brand\": \"Samsung\",\n        \"productImage\": \"https://example.com/images/smart-tv.jpg\",\n        \"addedBy\": {\n            \"_id\": \"67f5c209623f10da06a1cef5\",\n            \"username\": \"Charlie\"\n        },\n        \"__v\": 0,\n        \"createdAt\": \"2025-04-09T01:21:08.094Z\",\n        \"updatedAt\": \"2025-04-09T01:21:08.094Z\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "getMyProducts",
@@ -1259,7 +2034,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTc0ODY5LCJleHAiOjE3NDQxNzU3Njl9.fX0jnTkBFheMTstiE8hmIzJc2o500awmV2qGpPWpGxM",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
 									"type": "string"
 								}
 							]
@@ -1289,7 +2064,144 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "getMyProducts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/get-my-products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"get-my-products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:26:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "getMyProducts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/get-my-products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"get-my-products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "316"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13c-5/9h1KFZjU1BbvO00f0weIuMpIM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 09 Apr 2025 10:26:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"67f64b59768f0aaf9f7bfb3e\",\n        \"productName\": \"Wireless Headphones Asb\",\n        \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n        \"price\": 129.99,\n        \"category\": \"Electronics\",\n        \"brand\": \"Sony\",\n        \"productImage\": \"https://example.com/images/headphones.jpg\",\n        \"addedBy\": \"67f641f932d72418fc5813e7\",\n        \"__v\": 0\n    }\n]"
+						}
+					]
 				}
 			]
 		}
