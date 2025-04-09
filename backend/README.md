@@ -143,8 +143,8 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "email": "john@example.com",
-  "password": "securePass123"
+  "email": "max@example.com",
+  "password": "max123"
 }
 ```
 
@@ -153,8 +153,33 @@ Your server will start on `http://localhost:8000`.
 ```json
 {
   "message": "Login successful",
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR...",
-  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR..."
+  "user": {
+    "id": "67f5fa1d2a23b635bfe1162b",
+    "username": "Max",
+    "email": "max@example.com",
+    "accessToken": "eyJhbGciOiJIUzI1N..."
+  }
+}
+```
+
+---
+
+### Refresh Token
+
+**Endpoint:** `POST /api/refresh-token`  
+**Headers:** `No Authorization header required`
+
+**Sample Request:** `(No body needed if refresh token is in cookies)`
+
+```json
+{}
+```
+
+**Sample Response:**
+
+```json
+{
+  "accessToken": "eyJhbGciOiJIUzI1N..."
 }
 ```
 
