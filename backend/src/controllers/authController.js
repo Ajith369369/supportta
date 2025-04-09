@@ -26,6 +26,14 @@ exports.refreshAccessToken = async (req, res) => {
         const { accessToken, refreshToken: newRefreshToken } =
           generateTokens(user);
 
+        // Set new refresh token in secure HTTP-only cookie
+        res.cookie("refreshToken", newRefreshToken, {
+          httpOnly: true,
+          secure: process.env.NODE_ENV === "production", // true in production (HTTPS)
+          sameSite: "strict",
+          maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+        });
+
         res.status(200).json({
           accessToken,
           refreshToken: newRefreshToken,
