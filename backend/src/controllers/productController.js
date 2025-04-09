@@ -5,7 +5,15 @@ const User = require("../models/userModel");
 // Add product
 exports.addProduct = async (req, res) => {
   try {
-    const { productName, description, price, category, brand, productImage, addedBy } = req.body;
+    const {
+      productName,
+      description,
+      price,
+      category,
+      brand,
+      productImage,
+      addedBy,
+    } = req.body;
 
     // Check if brand exists
     const brandDoc = await Brand.findOne({ brandName: brand });
@@ -15,7 +23,9 @@ exports.addProduct = async (req, res) => {
 
     // Check if the category exists within the brand's categories array
     if (!brandDoc.categories.includes(category)) {
-      return res.status(400).json({ error: "Category not found in this brand." });
+      return res
+        .status(400)
+        .json({ error: "Category not found in this brand." });
     }
 
     // Create the product
@@ -31,7 +41,9 @@ exports.addProduct = async (req, res) => {
 
     await newProduct.save();
 
-    res.status(201).json({ message: "Product added successfully", product: newProduct });
+    res
+      .status(201)
+      .json({ message: "Product added successfully", product: newProduct });
   } catch (error) {
     res.status(500).json({ error: "Server error", details: error.message });
   }
@@ -48,10 +60,14 @@ exports.updateProduct = async (req, res) => {
 
     // Check ownership
     if (product.addedBy.toString() !== req.user.id) {
-      return res.status(403).json({ error: "You can only edit your own product" });
+      return res
+        .status(403)
+        .json({ error: "You can only edit your own product" });
     }
 
-    const updatedProduct = await Product.findByIdAndUpdate(id, updates, { new: true });
+    const updatedProduct = await Product.findByIdAndUpdate(id, updates, {
+      new: true,
+    });
     res.status(200).json(updatedProduct);
   } catch (err) {
     res.status(500).json({ error: "Server error", details: err.message });
@@ -68,7 +84,9 @@ exports.deleteProduct = async (req, res) => {
 
     // Check ownership
     if (product.addedBy.toString() !== req.user.id) {
-      return res.status(403).json({ error: "You can only delete your own product" });
+      return res
+        .status(403)
+        .json({ error: "You can only delete your own product" });
     }
 
     await Product.findByIdAndDelete(id);
@@ -80,13 +98,15 @@ exports.deleteProduct = async (req, res) => {
 
 // All products with filters
 exports.getAllProductsAddedByAllUsers = async (req, res) => {
-  const { brand, category, order = "desc" } = req.query;
+  const { brand, category, order = "desc", sortBy } = req.query;
   const loggedInUserId = req.user?.id; // Assuming JWT auth middleware is applied
 
   try {
     // Get users who have blocked the current user
-    const blockingUsers = await User.find({ blockedUsers: loggedInUserId }).select("_id");
-    const blockedByUserIds = blockingUsers.map(user => user._id);
+    const blockingUsers = await User.find({
+      blockedUsers: loggedInUserId,
+    }).select("_id");
+    const blockedByUserIds = blockingUsers.map((user) => user._id);
 
     // Build query
     let query = {
@@ -99,7 +119,8 @@ exports.getAllProductsAddedByAllUsers = async (req, res) => {
     // Sorting logic
     const sortOptions = {};
     if (sortBy === "price" || sortBy === "product-name") {
-      sortOptions[sortBy === "product-name" ? "productName" : "price"] = order === "asc" ? 1 : -1;
+      sortOptions[sortBy === "product-name" ? "productName" : "price"] =
+        order === "asc" ? 1 : -1;
     }
 
     // Fetch products
