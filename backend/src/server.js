@@ -21,8 +21,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/api", authRoutes);
-app.use("/api", userRoutes);
+app.use("/api", authRoutes); // refreshAccessToken 
+app.use("/api", userRoutes); 
 app.use("/api", brandRoutes);
 app.use("/api", productRoutes);
 
