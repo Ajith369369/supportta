@@ -100,8 +100,6 @@ exports.getAllProductsAddedByAllUsers = async (req, res) => {
     const sortOptions = {};
     if (sortBy === "price" || sortBy === "product-name") {
       sortOptions[sortBy === "product-name" ? "productName" : "price"] = order === "asc" ? 1 : -1;
-    } else {
-      sortOptions["createdAt"] = -1; // default sort
     }
 
     // Fetch products
