@@ -35,4 +35,7 @@ const productSchema = new mongoose.Schema(
   },
 );
 
+// 🔽 Clear old cached model (important when schema changes)
+delete mongoose.connection.models["Product"];
+
 module.exports = mongoose.model("Product", productSchema);
