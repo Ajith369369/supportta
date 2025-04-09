@@ -5,7 +5,9 @@
 Please note that I did not use APIs to populate the MongoDB database. Instead, I used a seeding script to insert the initial data directly into the database for testing purposes.
 
 ### Prerequisites
+
 Make sure you have the following installed on your machine:
+
 - **Node.js** (v20 or higher)
 - **MongoDB** (local or cloud via MongoDB Atlas)
 - **Postman** (for API testing)
@@ -63,7 +65,7 @@ Your server will start on `http://localhost:8000`.
 ### Authenticated Routes
 
 - Most routes require a valid **access token** in the `Authorization` header:
-  
+
   ```
   Authorization: Bearer {{accessToken}}
   ```
@@ -74,22 +76,22 @@ Your server will start on `http://localhost:8000`.
 
 ## Example API Workflows
 
-| Action               | Endpoint                        | Method |
-|----------------------|---------------------------------|--------|
-| Register User        | `/api/register`                 | POST   |
-| Login User           | `/api/login`                    | POST   |
-| New Access Token     | `/api/refresh-token`            | POST   |
-| Edit User Profile    | `/api/users/:id`                | PUT    |
-| Delete User Profile  | `/api/users/:id`                | DELETE |
-| Block User           | `/api/users/block/:userId`      | POST   |
-| Unlock User          | `/api/users/unblock/:userId`    | POST   |
-| Add Brand            | `/api/brands/add-brand`         | POST   |
-| Get All Brands       | `/api/brands/get-all-brands`    | GET    |
-| Add Product          | `/api/products/add-product`     | POST   |
-| Edit Product         | `/api/products/:id`             | PUT    |
-| Delete Product       | `/api/products/:id`             | DELETE |
-| Get All Products     | `/api/products/get-all-products`| GET    |
-| Get User's Products  | `/api/products/get-my-products` | GET    |
+| Action              | Endpoint                         | Method |
+| ------------------- | -------------------------------- | ------ |
+| Register User       | `/api/register`                  | POST   |
+| Login User          | `/api/login`                     | POST   |
+| New Access Token    | `/api/refresh-token`             | POST   |
+| Edit User Profile   | `/api/users/:id`                 | PUT    |
+| Delete User Profile | `/api/users/:id`                 | DELETE |
+| Block User          | `/api/users/block/:userId`       | POST   |
+| Unlock User         | `/api/users/unblock/:userId`     | POST   |
+| Add Brand           | `/api/brands/add-brand`          | POST   |
+| Get All Brands      | `/api/brands/get-all-brands`     | GET    |
+| Add Product         | `/api/products/add-product`      | POST   |
+| Edit Product        | `/api/products/:id`              | PUT    |
+| Delete Product      | `/api/products/:id`              | DELETE |
+| Get All Products    | `/api/products/get-all-products` | GET    |
+| Get User's Products | `/api/products/get-my-products`  | GET    |
 
 ---
 
@@ -100,24 +102,34 @@ Your server will start on `http://localhost:8000`.
 **Endpoint:** `POST /api/users/register`
 
 **Sample Request:**
+
 ```json
 {
-  "username": "john_doe",
-  "email": "john@example.com",
-  "password": "securePass123"
+  "username": "Max",
+  "email": "max@example.com",
+  "password": "max123",
+  "profilePhoto": "https://example.com/photos/max.jpg",
+  "blockedUsers": [],
+  "__v": {
+    "$numberInt": "0"
+  }
 }
 ```
 
 **Sample Response:**
+
 ```json
 {
   "message": "User registered successfully",
   "user": {
-    "_id": "67f5fa1d2a23b635bfe1162b",
-    "username": "john_doe",
-    "email": "john@example.com"
-  },
-  "accessToken": "eyJhbGciOiJIUzI1NiIsInR..."
+    "username": "Max",
+    "email": "max@example.com",
+    "password": "$2b$10$rITFP5xSTuJuDDV1ZMRmVuZtpY2kKDWtdIjKqViGWQ.CMfzqs8yPC",
+    "profilePhoto": "https://example.com/photos/max.jpg",
+    "blockedUsers": [],
+    "_id": "67f641f932d72418fc5813e7",
+    "__v": 0
+  }
 }
 ```
 
@@ -128,6 +140,7 @@ Your server will start on `http://localhost:8000`.
 **Endpoint:** `POST /api/users/login`
 
 **Sample Request:**
+
 ```json
 {
   "email": "john@example.com",
@@ -136,6 +149,7 @@ Your server will start on `http://localhost:8000`.
 ```
 
 **Sample Response:**
+
 ```json
 {
   "message": "Login successful",
@@ -152,6 +166,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Request:**
+
 ```json
 {
   "username": "john_updated",
@@ -160,6 +175,7 @@ Your server will start on `http://localhost:8000`.
 ```
 
 **Sample Response:**
+
 ```json
 {
   "message": "Profile updated successfully",
@@ -179,6 +195,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Response:**
+
 ```json
 {
   "message": "User deleted successfully"
@@ -193,6 +210,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Response:**
+
 ```json
 {
   "message": "User blocked successfully"
@@ -207,6 +225,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Response:**
+
 ```json
 {
   "message": "User unblocked successfully"
@@ -221,6 +240,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Request:**
+
 ```json
 {
   "name": "Apple iPhone 14",
@@ -232,6 +252,7 @@ Your server will start on `http://localhost:8000`.
 ```
 
 **Sample Response:**
+
 ```json
 {
   "message": "Product created successfully",
@@ -254,6 +275,7 @@ Your server will start on `http://localhost:8000`.
 **Endpoint:** `GET /api/products?brand=Apple&category=Electronics&sort=price&order=asc`
 
 **Sample Response:**
+
 ```json
 [
   {
@@ -284,6 +306,7 @@ Your server will start on `http://localhost:8000`.
 **Endpoint:** `GET /api/products/:id`
 
 **Sample Response:**
+
 ```json
 {
   "_id": "67f6a12b2b1234abcdef123",
@@ -304,6 +327,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Request:**
+
 ```json
 {
   "price": 749,
@@ -312,6 +336,7 @@ Your server will start on `http://localhost:8000`.
 ```
 
 **Sample Response:**
+
 ```json
 {
   "message": "Product updated successfully",
@@ -334,6 +359,7 @@ Your server will start on `http://localhost:8000`.
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Response:**
+
 ```json
 {
   "message": "Product deleted successfully"
