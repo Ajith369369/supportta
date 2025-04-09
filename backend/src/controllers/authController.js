@@ -1,5 +1,7 @@
 // Token Refresh API
-const refreshAccessToken = async (req, res) => {
+const generateTokens = require("../utils/generateTokens")
+
+exports.refreshAccessToken = async (req, res) => {
   const { refreshToken } = req.body;
 
   if (!refreshToken) {
@@ -35,4 +37,3 @@ const refreshAccessToken = async (req, res) => {
   }
 };
 
-exports.refreshAccessToken = refreshAccessToken;
