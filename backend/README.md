@@ -80,15 +80,15 @@ Your server will start on `http://localhost:8000`.
 | ------------------- | -------------------------------- | ------ |
 | Register User       | `/api/register`                  | POST   |
 | Login User          | `/api/login`                     | POST   |
-| New Access Token    | `/api/refresh-token`             | POST   |
-| Edit User Profile   | `/api/users/:id`                 | PUT    |
+| Refresh Token       | `/api/refresh-token`             | POST   |
+| Update User Profile | `/api/users/:id`                 | PUT    |
 | Delete User Profile | `/api/users/:id`                 | DELETE |
 | Block User          | `/api/users/block/:userId`       | POST   |
 | Unlock User         | `/api/users/unblock/:userId`     | POST   |
-| Add Brand           | `/api/brands/add-brand`          | POST   |
+| Create Brand        | `/api/brands/add-brand`          | POST   |
 | Get All Brands      | `/api/brands/get-all-brands`     | GET    |
-| Add Product         | `/api/products/add-product`      | POST   |
-| Edit Product        | `/api/products/:id`              | PUT    |
+| Create Product      | `/api/products/add-product`      | POST   |
+| Update Product      | `/api/products/:id`              | PUT    |
 | Delete Product      | `/api/products/:id`              | DELETE |
 | Get All Products    | `/api/products/get-all-products` | GET    |
 | Get User's Products | `/api/products/get-my-products`  | GET    |
@@ -236,7 +236,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Block a User
+### Block User
 
 **Endpoint:** `POST /api/users/block/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -251,7 +251,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Unblock a User
+### Unblock User
 
 **Endpoint:** `POST /api/users/unblock/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -262,6 +262,144 @@ Your server will start on `http://localhost:8000`.
 {
   "message": "User unblocked successfully"
 }
+```
+
+---
+
+### Create Brand
+
+**Endpoint:** `POST /api/brands/add-brand`  
+**Headers:** `Authorization: Bearer <accessToken>`
+
+**Sample Request:**
+
+```json
+{
+  "brandName": "SoundCoreY",
+  "brandLogo": "https://example.com/logos/soundcore.png",
+  "categories": ["Electronics"],
+  "__v": 0
+}
+```
+
+**Sample Response:**
+
+```json
+{
+  "message": "Brand created successfully",
+  "brand": {
+    "brandName": "SoundCoreY",
+    "brandLogo": "https://example.com/logos/soundcore.png",
+    "categories": ["Electronics"],
+    "_id": "67f647b3768f0aaf9f7bfb1d",
+    "__v": 0
+  }
+}
+```
+
+---
+
+### Get All Brands
+
+**Endpoint:** `GET /api/brands/get-all-brands`  
+**Headers:** `Authorization: Bearer <accessToken>`
+
+**Sample Response:**
+
+```json
+[
+  {
+    "_id": "67f5cdf4133dda43f538a408",
+    "brandName": "SoundCore",
+    "brandLogo": "https://example.com/logos/soundcore.png",
+    "categories": ["Electronics"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a409",
+    "brandName": "Nike",
+    "brandLogo": "https://example.com/logos/nike.png",
+    "categories": ["Footwear"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a40a",
+    "brandName": "FitBit",
+    "brandLogo": "https://example.com/logos/fitbit.png",
+    "categories": ["Wearables"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a40c",
+    "brandName": "JBL",
+    "brandLogo": "https://example.com/logos/jbl.png",
+    "categories": ["Electronics"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a40d",
+    "brandName": "Gaiam",
+    "brandLogo": "https://example.com/logos/gaiam.png",
+    "categories": ["Fitness"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a40e",
+    "brandName": "Logitech",
+    "brandLogo": "https://example.com/logos/logitech.png",
+    "categories": ["Accessories"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a40f",
+    "brandName": "Hydro Flask",
+    "brandLogo": "https://example.com/logos/hydroflask.png",
+    "categories": ["Home & Kitchen"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a411",
+    "brandName": "Sony",
+    "brandLogo": "https://example.com/logos/sony.png",
+    "categories": ["Electronics"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a412",
+    "brandName": "Bowflex",
+    "brandLogo": "https://example.com/logos/bowflex.png",
+    "categories": ["Fitness"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a413",
+    "brandName": "Samsung",
+    "brandLogo": "https://example.com/logos/samsung.png",
+    "categories": ["Electronics"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a414",
+    "brandName": "Samsonite",
+    "brandLogo": "https://example.com/logos/samsonite.png",
+    "categories": ["Accessories"],
+    "__v": 0
+  },
+  {
+    "_id": "67f5cdf4133dda43f538a415",
+    "brandName": "Philips",
+    "brandLogo": "https://example.com/logos/philips.png",
+    "categories": ["Home & Kitchen"],
+    "__v": 0
+  },
+  {
+    "_id": "67f60215a0ebd97bf41f1f48",
+    "brandName": "SoundCoreX",
+    "brandLogo": "https://example.com/logos/soundcore.png",
+    "categories": ["Electronics"],
+    "__v": 0
+  }
+]
 ```
 
 ---
