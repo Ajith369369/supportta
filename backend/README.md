@@ -109,9 +109,7 @@ Your server will start on `http://localhost:8000`.
   "email": "max@example.com",
   "password": "max123",
   "profilePhoto": "https://example.com/photos/max.jpg",
-  "blockedUsers": [],
-  "__v": {
-    "$numberInt": "0"
+  "blockedUsers": []
   }
 }
 ```
@@ -196,9 +194,7 @@ Your server will start on `http://localhost:8000`.
 {
   "username": "Max",
   "email": "max222@example.com",
-  "password": "max123",
   "profilePhoto": "https://example.com/photos/max.jpg",
-  "blockedUsers": []
 }
 ```
 
