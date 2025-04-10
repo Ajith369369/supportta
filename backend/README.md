@@ -542,7 +542,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Get My Products
+### Get User's Products
 
 **Endpoint:** `GET /api/products/get-my-products`
 
