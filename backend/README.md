@@ -194,7 +194,7 @@ Your server will start on `http://localhost:8000`.
 {
   "username": "Max",
   "email": "max222@example.com",
-  "profilePhoto": "https://example.com/photos/max.jpg",
+  "profilePhoto": "https://example.com/photos/max.jpg"
 }
 ```
 
@@ -273,8 +273,7 @@ Your server will start on `http://localhost:8000`.
 {
   "brandName": "SoundCoreY",
   "brandLogo": "https://example.com/logos/soundcore.png",
-  "categories": ["Electronics"],
-  "__v": 0
+  "categories": ["Electronics"]
 }
 ```
 
@@ -449,8 +448,13 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "price": 749,
-  "description": "Updated price for promotion"
+  "productName": "Wireless Headphones121",
+  "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+  "price": 129.99,
+  "category": "Electronics",
+  "brand": "Sony",
+  "productImage": "https://example.com/images/headphones.jpg",
+  "addedBy": "67f641f932d72418fc5813e7"
 }
 ```
 
@@ -458,15 +462,15 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "message": "Product updated successfully",
-  "product": {
-    "_id": "67f6a12b2b1234abcdef123",
-    "name": "Apple iPhone 14",
-    "price": 749,
-    "brand": "Apple",
-    "category": "Electronics",
-    "description": "Updated price for promotion"
-  }
+  "_id": "67f7c73bf085d460b23ecab7",
+  "productName": "Wireless Headphones121",
+  "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+  "price": 129.99,
+  "category": "Electronics",
+  "brand": "Sony",
+  "productImage": "https://example.com/images/headphones.jpg",
+  "addedBy": "67f641f932d72418fc5813e7",
+  "__v": 0
 }
 ```
 
