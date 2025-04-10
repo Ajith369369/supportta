@@ -268,18 +268,20 @@ Your server will start on `http://localhost:8000`.
 
 ### Create Product
 
-**Endpoint:** `POST /api/products`  
+**Endpoint:** `POST /api/products/add-product`  
 **Headers:** `Authorization: Bearer <accessToken>`
 
 **Sample Request:**
 
 ```json
 {
-  "name": "Apple iPhone 14",
-  "price": 799,
-  "brand": "Apple",
+  "productName": "Wireless Headphones Mini",
+  "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+  "price": 129.99,
   "category": "Electronics",
-  "description": "Latest iPhone with advanced features"
+  "brand": "Sony",
+  "productImage": "https://example.com/images/headphones.jpg",
+  "addedBy": "67f5fa1d2a23b635bfe1162b"
 }
 ```
 
@@ -287,67 +289,18 @@ Your server will start on `http://localhost:8000`.
 
 ```json
 {
-  "message": "Product created successfully",
+  "message": "Product added successfully",
   "product": {
-    "_id": "67f6a12b2b1234abcdef123",
-    "name": "Apple iPhone 14",
-    "price": 799,
-    "brand": "Apple",
+    "productName": "Wireless Headphones Mini",
+    "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+    "price": 129.99,
     "category": "Electronics",
-    "description": "Latest iPhone with advanced features",
-    "createdBy": "67f5fa1d2a23b635bfe1162b"
+    "brand": "Sony",
+    "productImage": "https://example.com/images/headphones.jpg",
+    "addedBy": "67f5fa1d2a23b635bfe1162b",
+    "_id": "67f647ec768f0aaf9f7bfb20",
+    "__v": 0
   }
-}
-```
-
----
-
-### Get All Products (with Filtering & Sorting)
-
-**Endpoint:** `GET /api/products?brand=Apple&category=Electronics&sort=price&order=asc`
-
-**Sample Response:**
-
-```json
-[
-  {
-    "_id": "67f6a12b2b1234abcdef123",
-    "name": "Apple iPhone 14",
-    "price": 799,
-    "brand": "Apple",
-    "category": "Electronics",
-    "description": "Latest iPhone with advanced features",
-    "createdBy": "67f5fa1d2a23b635bfe1162b"
-  },
-  {
-    "_id": "67f6a12b2b1234abcdef124",
-    "name": "Apple Watch Series 8",
-    "price": 399,
-    "brand": "Apple",
-    "category": "Electronics",
-    "description": "Advanced smartwatch by Apple",
-    "createdBy": "67f5fa1d2a23b635bfe1162b"
-  }
-]
-```
-
----
-
-### Get Product by ID
-
-**Endpoint:** `GET /api/products/:id`
-
-**Sample Response:**
-
-```json
-{
-  "_id": "67f6a12b2b1234abcdef123",
-  "name": "Apple iPhone 14",
-  "price": 799,
-  "brand": "Apple",
-  "category": "Electronics",
-  "description": "Latest iPhone with advanced features",
-  "createdBy": "67f5fa1d2a23b635bfe1162b"
 }
 ```
 
@@ -396,6 +349,81 @@ Your server will start on `http://localhost:8000`.
 {
   "message": "Product deleted successfully"
 }
+```
+
+---
+
+### Get All Products (with Filtering & Sorting)
+
+**Endpoint:** `GET /api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc`
+
+**Sample Response:**
+
+```json
+[
+  {
+    "_id": "67f5cb84dad77cfa0cb0c046",
+    "productName": "Wireless Headphones",
+    "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+    "price": 129.99,
+    "category": "Electronics",
+    "brand": "Sony",
+    "productImage": "https://example.com/images/headphones.jpg",
+    "addedBy": {
+      "_id": "67f5c209623f10da06a1cef5",
+      "username": "Charlie"
+    },
+    "__v": 0,
+    "createdAt": "2025-04-09T01:21:08.094Z",
+    "updatedAt": "2025-04-09T01:21:08.094Z"
+  },
+  {
+    "_id": "67f647ec768f0aaf9f7bfb20",
+    "productName": "Wireless Headphones Mini",
+    "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+    "price": 129.99,
+    "category": "Electronics",
+    "brand": "Sony",
+    "productImage": "https://example.com/images/headphones.jpg",
+    "addedBy": null,
+    "__v": 0
+  },
+  {
+    "_id": "67f64987768f0aaf9f7bfb2a",
+    "productName": "Wireless Headphones Mini",
+    "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+    "price": 129.99,
+    "category": "Electronics",
+    "brand": "Sony",
+    "productImage": "https://example.com/images/headphones.jpg",
+    "addedBy": null,
+    "__v": 0
+  }
+]
+```
+
+---
+
+### Get My Products
+
+**Endpoint:** `GET /api/products/get-my-products`
+
+**Sample Response:**
+
+```json
+[
+  {
+    "_id": "67f64b59768f0aaf9f7bfb3e",
+    "productName": "Wireless Headphones Asb",
+    "description": "Over-ear noise cancelling headphones with 30 hours battery life.",
+    "price": 129.99,
+    "category": "Electronics",
+    "brand": "Sony",
+    "productImage": "https://example.com/images/headphones.jpg",
+    "addedBy": "67f641f932d72418fc5813e7",
+    "__v": 0
+  }
+]
 ```
 
 ---
