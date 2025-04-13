@@ -82,7 +82,7 @@ Your server will start on `http://localhost:8000`.
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
 | Register User       | `/api/register`                  | POST   |
-| Login User          | `/api/login`                     | POST   |
+| [Login User](#login-user)<a id="login-user-to-top"></a>          | `/api/login`                     | POST   |
 | Refresh Token       | `/api/refresh-token`             | POST   |
 | Update User Profile | `/api/users/:id`                 | PUT    |
 | Delete User Profile | `/api/users/:id`                 | DELETE |
