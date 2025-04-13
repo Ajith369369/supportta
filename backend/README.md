@@ -65,26 +65,14 @@ Your server will start on `http://localhost:8000`.
 5. **Activate the Environment**
    - Click the dropdown next to **“No Environment”** (top-right).
    - Choose `YourEnvironment`.
-
-> This ensures variables like `{{baseUrl}}`, `{{accessToken}}`, `{{userId}}` are injected correctly into the requests.
-
+   - This ensures that the variables like `{{baseUrl}}`, `{{accessToken}}`, `{{userId}}` are injected correctly into the requests.
 6. **Log In and Set Tokens (if needed)**
    - If the collection requires authentication:
-     - Open the **Login** request in the collection.
+     - Open the **loginUser** request in the collection.
      - Send the request.
      - It will automatically store the `accessToken` and `refreshToken` into your environment.
-
----
-
-### Authenticated Routes
-
-- Most routes require a valid **access token** in the `Authorization` header:
-
-  ```
-  Authorization: Bearer {{accessToken}}
-  ```
-
-- If the access token expires, call `/api/refresh-token` with the `refreshToken` in the request body to get a new one ("refreshToken" request in "Users" collection).
+     - All protected routes will automatically use this `accessToken` in the `Authorization` header.
+     - If the access token expires, call `/api/refresh-token` to get a new one ("refreshToken" request in "Users" collection).
 
 ---
 
