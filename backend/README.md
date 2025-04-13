@@ -78,7 +78,7 @@ Your server will start on `http://localhost:8000`.
 
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
-| Register User       | `/api/register`                  | POST   |
+| [Register User](#Register_User↓)<a id="Register_User↑"></a>       | `/api/register`                  | POST   |
 | Login User          | `/api/login`                     | POST   |
 | Refresh Token       | `/api/refresh-token`             | POST   |
 | Update User Profile | `/api/users/:id`                 | PUT    |
@@ -93,11 +93,16 @@ Your server will start on `http://localhost:8000`.
 | Get All Products    | `/api/products/get-all-products` | GET    |
 | Get User's Products | `/api/products/get-my-products`  | GET    |
 
+
+
+
+
+
 ---
 
 ## Sample request/response for each API
 
-### Register User
+### [Register User](#Register_User↑)<a id="Register_User↓"></a>
 
 **Endpoint:** `POST /api/users/register`
 
