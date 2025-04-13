@@ -62,6 +62,7 @@ Your server will start on `http://localhost:8000`.
 3. **Import the environment**:
    - Use the provided `Supportta.postman_environment.json` file inside the `postman/` directory.
 4. **Update Environment Values (if needed)**
+   - Before sending requests related to the variables blockId, unblockId, productId, and brandId, update their values in the environment.
 5. **Activate the Environment**
    - Click the dropdown next to **“No Environment”** (top-right).
    - Choose `YourEnvironment`.
