@@ -78,7 +78,7 @@ Your server will start on `http://localhost:8000`.
 
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
-| [Register User](#Register_User↓)<a id="Register_User↑"></a>       | `/api/register`                  | POST   |
+| [Register User](#Register-User↓)<a id="Register-User↑"></a>       | `/api/register`                  | POST   |
 | [Login User](#Login_User↓)<a id="Login_User↑"></a>          | `/api/login`                     | POST   |
 | Refresh Token       | `/api/refresh-token`             | POST   |
 | Update User Profile | `/api/users/:id`                 | PUT    |
@@ -99,11 +99,12 @@ Your server will start on `http://localhost:8000`.
 
 
 
+
 ---
 
 ## Sample request/response for each API
 
-### [Register User](#Register_User↑)<a id="Register_User↓"></a>
+### [Register User](#Register-User↑)<a id="Register-User↓"></a>
 
 **Endpoint:** `POST /api/users/register`
 
