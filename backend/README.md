@@ -94,13 +94,13 @@ Your server will start on `http://localhost:8000`.
 | Get User's Products | `/api/products/get-my-products`  | GET    |
 
 
-- [Register User](#Register_User)<a id="Register_User↑"></a>
-- [Login User](#Login_User)<a id="Login_User↑"></a>
-- [Refresh Token](#Refresh_Token)<a id="Refresh_Token↑"></a>
-- [Update User Profile](#Update_User_Profile)<a id="Update_User_Profile↑"></a>
-- [Delete User Profile](#Delete_User_Profile)<a id="Delete_User_Profile↑"></a>
-- [Block User](#Block_User)<a id="Block_User↑"></a>
-- [Unblock User](#Unblock_User)<a id="Unblock_User↑"></a>
+- [Register User](#Register-User)<a id="Register-User↑"></a>
+- [Login User](#Login-User)<a id="Login-User↑"></a>
+- [Refresh Token](#Refresh-Token)<a id="Refresh-Token↑"></a>
+- [Update User Profile](#Update-User-Profile)<a id="Update-User-Profile↑"></a>
+- [Delete User Profile](#Delete-User-Profile)<a id="Delete-User-Profile↑"></a>
+- [Block User](#Block-User)<a id="Block-User↑"></a>
+- [Unblock User](#Unblock-User)<a id="Unblock-User↑"></a>
 
 
 
@@ -114,7 +114,7 @@ Your server will start on `http://localhost:8000`.
 
 ## Sample request/response for each API
 
-### [Register User](#Register_User↑)<a id="Register_User"></a>
+### [Register User](#Register-User↑)<a id="Register-User"></a>
 
 **Endpoint:** `POST /api/users/register`
 
@@ -150,7 +150,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Login User](#Login_User↑)<a id="Login_User"></a>
+### [Login User](#Login-User↑)<a id="Login-User"></a>
 
 **Endpoint:** `POST /api/users/login`
 
@@ -179,7 +179,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Refresh Token](#Refresh_Token↑)<a id="Refresh_Token"></a>
+### [Refresh Token](#Refresh-Token↑)<a id="Refresh-Token"></a>
 
 **Endpoint:** `POST /api/refresh-token`  
 **Headers:** `No Authorization header required`
@@ -200,7 +200,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Update User Profile](#Update_User_Profile↑)<a id="Update_User_Profile"></a>
+### [Update User Profile](#Update-User-Profile↑)<a id="Update-User-Profile"></a>
 
 **Endpoint:** `PUT /api/users/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -234,7 +234,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Delete User Profile](#Delete_User_Profile↑)<a id="Delete_User_Profile"></a>
+### [Delete User Profile](#Delete-User-Profile↑)<a id="Delete-User-Profile"></a>
 
 **Endpoint:** `DELETE /api/users/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -249,7 +249,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Block User](#Block_User↑)<a id="Block_User"></a>
+### [Block User](#Block-User↑)<a id="Block-User"></a>
 
 **Endpoint:** `POST /api/users/block/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -264,7 +264,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Unblock User](#Unblock_User↑)<a id="Unblock_User"></a>
+### [Unblock User](#Unblock-User↑)<a id="Unblock-User"></a>
 
 **Endpoint:** `POST /api/users/unblock/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
