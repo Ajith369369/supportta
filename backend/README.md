@@ -94,9 +94,10 @@ Your server will start on `http://localhost:8000`.
 | Get User's Products | `/api/products/get-my-products`  | GET    |
 
 
-- [Register User](#Register-User↓)<a id="Register-User↑"></a>
+- [Register User](#Register_User)<a id="Register_User↑"></a>
 - [Login User](#Login-User)<a id="Login-User↑"></a>
-- [Refresh Token](#Refresh_Token↓)<a id="Refresh_Token↑"></a>
+- [Refresh Token](#Refresh_Token)<a id="Refresh_Token↑"></a>
+
 
 
 
@@ -107,7 +108,7 @@ Your server will start on `http://localhost:8000`.
 
 ## Sample request/response for each API
 
-### [Register User](#Register-User↑)<a id="Register-User↓"></a>
+### [Register User](#Register_User↑)<a id="Register_User"></a>
 
 **Endpoint:** `POST /api/users/register`
 
@@ -172,7 +173,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Refresh Token](#Refresh-Token↑)<a id="Refresh-Token↓"></a>
+### [Refresh Token](#Refresh_Token↑)<a id="Refresh_Token"></a>
 
 **Endpoint:** `POST /api/refresh-token`  
 **Headers:** `No Authorization header required`
