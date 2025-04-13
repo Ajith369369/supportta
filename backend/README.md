@@ -107,7 +107,7 @@ Your server will start on `http://localhost:8000`.
 - [Update Product](#Update-Product)<a id="Update-Product↑"></a>
 - [Delete Product](#Delete-Product)<a id="Delete-Product↑"></a>
 - [Get All Products](#Get-All-Products)<a id="Get-All-Products↑"></a>
-- [Get User's Products](#Get-User's-Products)<a id="Get-User's-Products↑"></a>
+- [Get User's Products](#Get-User-Products)<a id="Get-User-Products↑"></a>
 
 ---
 
@@ -558,7 +558,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Get User's Products](#Get-User's-Products↑)<a id="Get-User's-Products"></a>
+### [Get User's Products](#Get-User-Products↑)<a id="Get-User-Products"></a>
 
 **Endpoint:** `GET /api/products/get-my-products`
 
