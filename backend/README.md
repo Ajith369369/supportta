@@ -95,7 +95,7 @@ Your server will start on `http://localhost:8000`.
 
 
 - [Register User](#Register-User↓)<a id="Register-User↑"></a>
-- [Login User](#Login-User↓)<a id="Login-User↑"></a>
+- [Login User](#Login-User)<a id="Login-User↑"></a>
 - [Refresh Token](#Refresh_Token↓)<a id="Refresh_Token↑"></a>
 
 
@@ -143,7 +143,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Login User](#Login-User↑)<a id="Login-User↓"></a>
+### [Login User](#Login-User↑)<a id="Login-User"></a>
 
 **Endpoint:** `POST /api/users/login`
 
