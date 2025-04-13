@@ -101,6 +101,11 @@ Your server will start on `http://localhost:8000`.
 - [Delete User Profile](#Delete-User-Profile)<a id="Delete-User-Profile↑"></a>
 - [Block User](#Block-User)<a id="Block-User↑"></a>
 - [Unblock User](#Unblock-User)<a id="Unblock-User↑"></a>
+- [Create Brand](#Create-Brand)<a id="Create-Brand↑"></a>
+- [Get All Brands](#Get-All-Brands)<a id="Get-All-Brands↑"></a>
+- [Create Product](#Create-Product)<a id="Create-Product↑"></a>
+- [Update Product](#Update-Product)<a id="Update-Product↑"></a>
+
 
 
 
@@ -279,7 +284,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Create Brand
+### [Create Brand](#Create-Brand↑)<a id="Create-Brand"></a>
 
 **Endpoint:** `POST /api/brands/add-brand`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -311,7 +316,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Get All Brands
+### [Get All Brands](#Get-All-Brands↑)<a id="Get-All-Brands"></a>
 
 **Endpoint:** `GET /api/brands/get-all-brands`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -416,7 +421,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Create Product
+### [Create Product](#Create-Product↑)<a id="Create-Product"></a>
 
 **Endpoint:** `POST /api/products/add-product`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -456,7 +461,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Update Product
+### [Update Product](#Update-Product↑)<a id="Update-Product"></a>
 
 **Endpoint:** `PUT /api/products/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
