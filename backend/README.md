@@ -79,7 +79,7 @@ Your server will start on `http://localhost:8000`.
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
 | [Register User](#Register_User↓)<a id="Register_User↑"></a>       | `/api/register`                  | POST   |
-| Login User          | `/api/login`                     | POST   |
+| [Login User](#Login_User↓)<a id="Login_User↑"></a>          | `/api/login`                     | POST   |
 | Refresh Token       | `/api/refresh-token`             | POST   |
 | Update User Profile | `/api/users/:id`                 | PUT    |
 | Delete User Profile | `/api/users/:id`                 | DELETE |
@@ -92,6 +92,7 @@ Your server will start on `http://localhost:8000`.
 | Delete Product      | `/api/products/:id`              | DELETE |
 | Get All Products    | `/api/products/get-all-products` | GET    |
 | Get User's Products | `/api/products/get-my-products`  | GET    |
+
 
 
 
@@ -138,7 +139,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Login User
+### [Login User](#Login_User↑)<a id="Login_User↓"></a>
 
 **Endpoint:** `POST /api/users/login`
 
