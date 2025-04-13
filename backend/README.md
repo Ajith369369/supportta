@@ -54,11 +54,25 @@ Your server will start on `http://localhost:8000`.
 
 1. **Open Postman**
 2. **Import the collection**:
-   - Use the provided `.postman_collection.json` file inside the `postman/` directory.
+   - Use the provided `Supportta.postman_collection.json` file inside the `postman/` directory.
    - Or click “Import” in Postman and paste this GitHub raw URL:
      ```
      https://github.com/Ajith369369/supportta/blob/main/backend/postman/Supportta.postman_collection.json
      ```
+3. **Import the environment**:
+   - Use the provided `Supportta.postman_environment.json` file inside the `postman/` directory.
+4. **Update Environment Values (if needed)**
+5. **Activate the Environment**
+   - Click the dropdown next to **“No Environment”** (top-right).
+   - Choose `YourEnvironment`.
+
+> This ensures variables like `{{baseUrl}}`, `{{accessToken}}`, `{{userId}}` are injected correctly into the requests.
+
+6. **Log In and Set Tokens (if needed)**
+   - If the collection requires authentication:
+     - Open the **Login** request in the collection.
+     - Send the request.
+     - It will automatically store the `accessToken` and `refreshToken` into your environment.
 
 ---
 
