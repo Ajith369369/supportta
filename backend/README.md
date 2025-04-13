@@ -94,26 +94,26 @@ Your server will start on `http://localhost:8000`.
 | Get User's Products | `/api/products/get-my-products`  | GET    |
 
 
-- [Register User](#Register-User)<a id="Register-User↑"></a>
-- [Login User](#Login-User)<a id="Login-User↑"></a>
-- [Refresh Token](#Refresh-Token)<a id="Refresh-Token↑"></a>
-- [Update User Profile](#Update-User-Profile)<a id="Update-User-Profile↑"></a>
-- [Delete User Profile](#Delete-User-Profile)<a id="Delete-User-Profile↑"></a>
-- [Block User](#Block-User)<a id="Block-User↑"></a>
-- [Unblock User](#Unblock-User)<a id="Unblock-User↑"></a>
-- [Create Brand](#Create-Brand)<a id="Create-Brand↑"></a>
-- [Get All Brands](#Get-All-Brands)<a id="Get-All-Brands↑"></a>
-- [Create Product](#Create-Product)<a id="Create-Product↑"></a>
-- [Update Product](#Update-Product)<a id="Update-Product↑"></a>
-- [Delete Product](#Delete-Product)<a id="Delete-Product↑"></a>
-- [Get All Products](#Get-All-Products)<a id="Get-All-Products↑"></a>
-- [Get User's Products](#Get-User-Products)<a id="Get-User-Products↑"></a>
+- [Register User](#register-user)<a id="register-user-to-top"></a>
+- [Login User](#login-user)<a id="login-user-to-top"></a>
+- [Refresh Token](#refresh-token)<a id="refresh-token-to-top"></a>
+- [Update User Profile](#update-user-profile)<a id="update-user-profile-to-top"></a>
+- [Delete User Profile](#delete-user-profile)<a id="delete-user-profile-to-top"></a>
+- [Block User](#block-user)<a id="block-user-to-top"></a>
+- [Unblock User](#unblock-user)<a id="unblock-user-to-top"></a>
+- [Create Brand](#create-brand)<a id="create-brand-to-top"></a>
+- [Get All Brands](#get-all-brands)<a id="get-all-brands-to-top"></a>
+- [Create Product](#create-product)<a id="create-product-to-top"></a>
+- [Update Product](#update-product)<a id="update-product-to-top"></a>
+- [Delete Product](#delete-product)<a id="delete-product-to-top"></a>
+- [Get All Products](#get-all-products)<a id="get-all-products-to-top"></a>
+- [Get User's Products](#get-user-products)<a id="get-user-products-to-top"></a>
 
 ---
 
 ## Sample request/response for each API
 
-### [Register User](#Register-User↑)<a id="Register-User"></a>
+### [Register User](#register-user-to-top)<a id="register-user"></a>
 
 **Endpoint:** `POST /api/users/register`
 
@@ -149,7 +149,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Login User](#Login-User↑)<a id="Login-User"></a>
+### [Login User](#login-user-to-top)<a id="login-user"></a>
 
 **Endpoint:** `POST /api/users/login`
 
@@ -178,7 +178,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Refresh Token](#Refresh-Token↑)<a id="Refresh-Token"></a>
+### [Refresh Token](#refresh-token-to-top)<a id="refresh-token"></a>
 
 **Endpoint:** `POST /api/refresh-token`  
 **Headers:** `No Authorization header required`
@@ -199,7 +199,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Update User Profile](#Update-User-Profile↑)<a id="Update-User-Profile"></a>
+### [Update User Profile](#update-user-profile-to-top)<a id="update-user-profile"></a>
 
 **Endpoint:** `PUT /api/users/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -233,7 +233,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Delete User Profile](#Delete-User-Profile↑)<a id="Delete-User-Profile"></a>
+### [Delete User Profile](#delete-user-profile-to-top)<a id="delete-user-profile"></a>
 
 **Endpoint:** `DELETE /api/users/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -248,7 +248,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Block User](#Block-User↑)<a id="Block-User"></a>
+### [Block User](#block-user-to-top)<a id="block-user"></a>
 
 **Endpoint:** `POST /api/users/block/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -263,7 +263,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Unblock User](#Unblock-User↑)<a id="Unblock-User"></a>
+### [Unblock User](#unblock-user-to-top)<a id="unblock-user"></a>
 
 **Endpoint:** `POST /api/users/unblock/:userId`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -278,7 +278,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Create Brand](#Create-Brand↑)<a id="Create-Brand"></a>
+### [Create Brand](#create-brand-to-top)<a id="create-brand"></a>
 
 **Endpoint:** `POST /api/brands/add-brand`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -310,7 +310,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Get All Brands](#Get-All-Brands↑)<a id="Get-All-Brands"></a>
+### [Get All Brands](#get-all-brands-to-top)<a id="get-all-brands"></a>
 
 **Endpoint:** `GET /api/brands/get-all-brands`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -415,7 +415,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Create Product](#Create-Product↑)<a id="Create-Product"></a>
+### [Create Product](#create-product-to-top)<a id="create-product"></a>
 
 **Endpoint:** `POST /api/products/add-product`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -455,7 +455,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Update Product](#Update-Product↑)<a id="Update-Product"></a>
+### [Update Product](#update-product-to-top)<a id="update-product"></a>
 
 **Endpoint:** `PUT /api/products/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -492,7 +492,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Delete Product](#Delete-Product↑)<a id="Delete-Product"></a>
+### [Delete Product](#delete-product-to-top)<a id="delete-product"></a>
 
 **Endpoint:** `DELETE /api/products/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -507,7 +507,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Get All Products](#Get-All-Products↑)<a id="Get-All-Products"></a> (with Filtering & Sorting)
+### [Get All Products](#get-all-products-to-top)<a id="get-all-products"></a> (with Filtering & Sorting)
 
 **Endpoint:** `GET /api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc`
 
@@ -558,7 +558,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### [Get User's Products](#Get-User-Products↑)<a id="Get-User-Products"></a>
+### [Get User's Products](#get-user-products-to-top)<a id="get-user-products"></a>
 
 **Endpoint:** `GET /api/products/get-my-products`
 
