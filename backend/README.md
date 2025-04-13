@@ -78,8 +78,8 @@ Your server will start on `http://localhost:8000`.
 
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
-| [Register User](#Register-User↓)<a id="Register-User↑"></a>       | `/api/register`                  | POST   |
-| [Login User](#Login_User↓)<a id="Login_User↑"></a>          | `/api/login`                     | POST   |
+| Register User       | `/api/register`                  | POST   |
+| Login User          | `/api/login`                     | POST   |
 | Refresh Token       | `/api/refresh-token`             | POST   |
 | Update User Profile | `/api/users/:id`                 | PUT    |
 | Delete User Profile | `/api/users/:id`                 | DELETE |
@@ -94,6 +94,9 @@ Your server will start on `http://localhost:8000`.
 | Get User's Products | `/api/products/get-my-products`  | GET    |
 
 
+- [Register User](#Register_User↓)<a id="Register_User↑"></a>
+- [Login User](#Login_User↓)<a id="Login_User↑"></a>
+- [Refresh Token](#Refresh_Token↓)<a id="Refresh_Token↑"></a>
 
 
 
@@ -104,7 +107,7 @@ Your server will start on `http://localhost:8000`.
 
 ## Sample request/response for each API
 
-### [Register User](#Register-User↑)<a id="Register-User↓"></a>
+### [Register User](#Register_User↑)<a id="Register_User↓"></a>
 
 **Endpoint:** `POST /api/users/register`
 
@@ -169,7 +172,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Refresh Token
+### [Refresh Token](#Refresh_Token↑)<a id="Refresh_Token↓"></a>
 
 **Endpoint:** `POST /api/refresh-token`  
 **Headers:** `No Authorization header required`
