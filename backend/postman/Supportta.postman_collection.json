@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,12 +24,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/register",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/register",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -45,7 +43,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -113,7 +111,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": [],\r\n    \"__v\": {\r\n        \"$numberInt\": \"0\"\r\n    }\r\n}",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n    }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -178,12 +176,39 @@
 				},
 				{
 					"name": "loginUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const data = pm.response.json();\r",
+									"pm.environment.set(\"accessToken\", data.accessToken);\r",
+									"pm.environment.set(\"userId\", data.user.id);\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"max@example.com\",\r\n    \"password\": \"max123\"\r\n}",
+							"raw": "{\r\n    \"email\": \"max555@example.com\",\r\n    \"password\": \"max123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -191,12 +216,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/login",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/login",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
@@ -281,6 +304,27 @@
 				},
 				{
 					"name": "refreshToken",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const data = pm.response.json();\r",
+									"pm.environment.set(\"accessToken\", data.accessToken);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -297,12 +341,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/refresh-token",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/refresh-token",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"refresh-token"
@@ -452,13 +494,36 @@
 				},
 				{
 					"name": "updateUserProfile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const accessToken = pm.environment.get(\"accessToken\");\r",
+									"const id = pm.environment.get(\"userId\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxODIyLCJleHAiOjE3NDQxOTI3MjJ9.dTrM-fdYrKTUBZmhBZ3Pxrn4zl_3VMhBI0ydv-P6pak",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -467,7 +532,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max222@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
+							"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max555@example.com\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -475,16 +540,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/{{userId}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
-								"67f5fa1d2a23b635bfe1162b"
+								"{{userId}}"
 							]
 						}
 					},
@@ -496,7 +559,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max222@example.com\",\r\n    \"password\": \"max123\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n    \"blockedUsers\": []\r\n}",
+									"raw": "{\r\n    \"username\": \"Max\",\r\n    \"email\": \"max222@example.com\",\r\n    \"profilePhoto\": \"https://example.com/photos/max.jpg\",\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -561,13 +624,32 @@
 				},
 				{
 					"name": "deleteUserProfile",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const accessToken = pm.environment.get(\"accessToken\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjVmYTFkMmEyM2I2MzViZmUxMTYyYiIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkxODIyLCJleHAiOjE3NDQxOTI3MjJ9.dTrM-fdYrKTUBZmhBZ3Pxrn4zl_3VMhBI0ydv-P6pak",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -584,16 +666,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/67f5fa1d2a23b635bfe1162b",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/{{userId}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
-								"67f5fa1d2a23b635bfe1162b"
+								"{{userId}}"
 							]
 						}
 					},
@@ -670,13 +750,33 @@
 				},
 				{
 					"name": "blockUser",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const accessToken = pm.environment.get(\"accessToken\");\r",
+									"const id = pm.environment.get(\"blockId\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkyMjY1LCJleHAiOjE3NDQxOTMxNjV9.CR5DS4CKlfNPUcq0Hu73YWA0DqBM3L7iDpWjrjB3W3g",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -693,17 +793,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/block/67f5c209623f10da06a1cef3",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/block/{{blockId}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
 								"block",
-								"67f5c209623f10da06a1cef3"
+								"{{blockId}}"
 							]
 						}
 					},
@@ -781,13 +879,33 @@
 				},
 				{
 					"name": "unblockUser",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const accessToken = pm.environment.get(\"accessToken\");\r",
+									"const id = pm.environment.get(\"unblockId\");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkyMjY1LCJleHAiOjE3NDQxOTMxNjV9.CR5DS4CKlfNPUcq0Hu73YWA0DqBM3L7iDpWjrjB3W3g",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -804,17 +922,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/users/unblock/67f5c209623f10da06a1cef3",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/users/unblock/{{unblockId}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"users",
 								"unblock",
-								"67f5c209623f10da06a1cef3"
+								"{{unblockId}}"
 							]
 						}
 					},
@@ -903,7 +1019,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzMzczLCJleHAiOjE3NDQxOTQyNzN9.RXvth2VIqw3qYj8RB75RtPn_5-ZPB5CUKkCd5MG-rcg",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -911,12 +1027,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8000/api/brands/get-all-brands",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/brands/get-all-brands",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"brands",
@@ -988,13 +1102,34 @@
 				},
 				{
 					"name": "addBrand",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const data = pm.response.json();\r",
+									"pm.environment.set(\"brandId\", data.brand._id);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzMzczLCJleHAiOjE3NDQxOTQyNzN9.RXvth2VIqw3qYj8RB75RtPn_5-ZPB5CUKkCd5MG-rcg",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1003,7 +1138,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"brandName\": \"SoundCoreY\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+							"raw": "{\r\n    \"brandName\": \"SoundCorej\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1011,12 +1146,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/brands/add-brand",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/brands/add-brand",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"brands",
@@ -1032,7 +1165,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"brandName\": \"SoundCoreX\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+									"raw": "{\r\n    \"brandName\": \"SoundCoreX\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1100,7 +1233,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"brandName\": \"SoundCoreY\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ],\r\n    \"__v\": 0\r\n}",
+									"raw": "{\r\n    \"brandName\": \"SoundCoreY\",\r\n    \"brandLogo\": \"https://example.com/logos/soundcore.png\",\r\n    \"categories\": [\r\n        \"Electronics\"\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1170,13 +1303,36 @@
 			"item": [
 				{
 					"name": "addProduct",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const data = pm.response.json()\r",
+									"pm.environment.set(\"productId\", data.product._id)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1185,7 +1341,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productName\": \"Wireless Headphones Asb\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones A\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"{{userId}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1193,12 +1349,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/add-product",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/add-product",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
@@ -1214,7 +1368,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"productName\": \"Wireless Headphones Mini\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
+									"raw": "{\r\n    \"productName\": \"Wireless Headphones Sand\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f5fa1d2a23b635bfe1162b\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1285,7 +1439,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTkzNzI0LCJleHAiOjE3NDQxOTQ2MjR9.QcQoEFouWBWlDfCtY0VPKB3yMrk-jZNtWOIRHVYlvDQ",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1294,7 +1448,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"productName\": \"Wireless Headphones111\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
+							"raw": "{\r\n    \"productName\": \"Wireless Headphones121\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1302,16 +1456,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/67f647ec768f0aaf9f7bfb20",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/67f7c73bf085d460b23ecab7",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
-								"67f647ec768f0aaf9f7bfb20"
+								"67f7c73bf085d460b23ecab7"
 							]
 						}
 					},
@@ -1451,6 +1603,74 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"error\": \"You can only edit your own product\"\n}"
+						},
+						{
+							"name": "updateProduct",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productName\": \"Wireless Headphones121\",\r\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\r\n    \"price\": 129.99,\r\n    \"category\": \"Electronics\",\r\n    \"brand\": \"Sony\",\r\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\r\n    \"addedBy\": \"67f641f932d72418fc5813e7\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/products/67f7c73bf085d460b23ecab7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"products",
+										"67f7c73bf085d460b23ecab7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "313"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"139-2s6qxjrFjrnCYIvEhay2htvn3+c\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Apr 2025 13:34:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"67f7c73bf085d460b23ecab7\",\n    \"productName\": \"Wireless Headphones121\",\n    \"description\": \"Over-ear noise cancelling headphones with 30 hours battery life.\",\n    \"price\": 129.99,\n    \"category\": \"Electronics\",\n    \"brand\": \"Sony\",\n    \"productImage\": \"https://example.com/images/headphones.jpg\",\n    \"addedBy\": \"67f641f932d72418fc5813e7\",\n    \"__v\": 0\n}"
 						}
 					]
 				},
@@ -1462,7 +1682,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1479,16 +1699,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/67f64ab4768f0aaf9f7bfb2f",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/{{productId}}",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
-								"67f64ab4768f0aaf9f7bfb2f"
+								"{{productId}}"
 							]
 						}
 					},
@@ -1642,7 +1860,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1659,12 +1877,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/get-all-products",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/get-all-products",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
@@ -1754,7 +1970,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1771,12 +1987,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
@@ -1902,7 +2116,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -1919,12 +2133,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/get-all-products?sortBy=price&order=asc",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/get-all-products?sortBy=price&order=asc",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
@@ -2034,7 +2246,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZjY0MWY5MzJkNzI0MThmYzU4MTNlNyIsImVtYWlsIjoibWF4QGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ0MTk0MTIxLCJleHAiOjE3NDQxOTUwMjF9.3iCehZ5vDU3Hdo8CxiluM0d_Mwoum3Q0amVnIfgQJ6A",
+									"value": "{{accessToken}}",
 									"type": "string"
 								}
 							]
@@ -2051,12 +2263,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/products/get-my-products",
-							"protocol": "http",
+							"raw": "{{baseUrl}}/api/products/get-my-products",
 							"host": [
-								"localhost"
+								"{{baseUrl}}"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"products",
