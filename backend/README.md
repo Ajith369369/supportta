@@ -81,36 +81,20 @@ Your server will start on `http://localhost:8000`.
 
 | Action              | Endpoint                         | Method |
 | ------------------- | -------------------------------- | ------ |
-| Register User       | `/api/register`                  | POST   |
+| [Register User](#register-user)<a id="register-user-to-top"></a>       | `/api/register`                  | POST   |
 | [Login User](#login-user)<a id="login-user-to-top"></a>          | `/api/login`                     | POST   |
-| Refresh Token       | `/api/refresh-token`             | POST   |
-| Update User Profile | `/api/users/:id`                 | PUT    |
-| Delete User Profile | `/api/users/:id`                 | DELETE |
-| Block User          | `/api/users/block/:userId`       | POST   |
-| Unblock User        | `/api/users/unblock/:userId`     | POST   |
-| Create Brand        | `/api/brands/add-brand`          | POST   |
-| Get All Brands      | `/api/brands/get-all-brands`     | GET    |
-| Create Product      | `/api/products/add-product`      | POST   |
-| Update Product      | `/api/products/:id`              | PUT    |
-| Delete Product      | `/api/products/:id`              | DELETE |
-| Get All Products    | `/api/products/get-all-products` | GET    |
-| Get User's Products | `/api/products/get-my-products`  | GET    |
-
-
-- [Register User](#register-user)<a id="register-user-to-top"></a>
-- [Login User](#login-user)<a id="login-user-to-top"></a>
-- [Refresh Token](#refresh-token)<a id="refresh-token-to-top"></a>
-- [Update User Profile](#update-user-profile)<a id="update-user-profile-to-top"></a>
-- [Delete User Profile](#delete-user-profile)<a id="delete-user-profile-to-top"></a>
-- [Block User](#block-user)<a id="block-user-to-top"></a>
-- [Unblock User](#unblock-user)<a id="unblock-user-to-top"></a>
-- [Create Brand](#create-brand)<a id="create-brand-to-top"></a>
-- [Get All Brands](#get-all-brands)<a id="get-all-brands-to-top"></a>
-- [Create Product](#create-product)<a id="create-product-to-top"></a>
-- [Update Product](#update-product)<a id="update-product-to-top"></a>
-- [Delete Product](#delete-product)<a id="delete-product-to-top"></a>
-- [Get All Products](#get-all-products)<a id="get-all-products-to-top"></a>
-- [Get User's Products](#get-user-products)<a id="get-user-products-to-top"></a>
+| [Refresh Token](#refresh-token)<a id="refresh-token-to-top"></a>       | `/api/refresh-token`             | POST   |
+| [Update User Profile](#update-user-profile)<a id="update-user-profile-to-top"></a> | `/api/users/:id`                 | PUT    |
+| [Delete User Profile](#delete-user-profile)<a id="delete-user-profile-to-top"></a> | `/api/users/:id`                 | DELETE |
+| [Block User](#block-user)<a id="block-user-to-top"></a>          | `/api/users/block/:userId`       | POST   |
+| [Unblock User](#unblock-user)<a id="unblock-user-to-top"></a>        | `/api/users/unblock/:userId`     | POST   |
+| [Create Brand](#create-brand)<a id="create-brand-to-top"></a>        | `/api/brands/add-brand`          | POST   |
+| [Get All Brands](#get-all-brands)<a id="get-all-brands-to-top"></a>      | `/api/brands/get-all-brands`     | GET    |
+| [Create Product](#create-product)<a id="create-product-to-top"></a>      | `/api/products/add-product`      | POST   |
+| [Update Product](#update-product)<a id="update-product-to-top"></a>      | `/api/products/:id`              | PUT    |
+| [Delete Product](#delete-product)<a id="delete-product-to-top"></a>      | `/api/products/:id`              | DELETE |
+| [Get All Products](#get-all-products)<a id="get-all-products-to-top"></a>    | `/api/products/get-all-products` | GET    |
+| [Get User's Products](#get-user-products)<a id="get-user-products-to-top"></a> | `/api/products/get-my-products`  | GET    |
 
 ---
 
