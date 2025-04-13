@@ -105,15 +105,9 @@ Your server will start on `http://localhost:8000`.
 - [Get All Brands](#Get-All-Brands)<a id="Get-All-Brands↑"></a>
 - [Create Product](#Create-Product)<a id="Create-Product↑"></a>
 - [Update Product](#Update-Product)<a id="Update-Product↑"></a>
-
-
-
-
-
-
-
-
-
+- [Delete Product](#Delete-Product)<a id="Delete-Product↑"></a>
+- [Get All Products](#Get-All-Products)<a id="Get-All-Products↑"></a>
+- [Get User's Products](#Get-User's-Products)<a id="Get-User's-Products↑"></a>
 
 ---
 
@@ -498,7 +492,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Delete Product
+### [Delete Product](#Delete-Product↑)<a id="Delete-Product"></a>
 
 **Endpoint:** `DELETE /api/products/:id`  
 **Headers:** `Authorization: Bearer <accessToken>`
@@ -513,7 +507,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Get All Products (with Filtering & Sorting)
+### [Get All Products](#Get-All-Products↑)<a id="Get-All-Products"></a> (with Filtering & Sorting)
 
 **Endpoint:** `GET /api/products/get-all-products?brand=Sony&category=Electronics&sortBy=price&order=asc`
 
@@ -564,7 +558,7 @@ Your server will start on `http://localhost:8000`.
 
 ---
 
-### Get User's Products
+### [Get User's Products](#Get-User's-Products↑)<a id="Get-User's-Products"></a>
 
 **Endpoint:** `GET /api/products/get-my-products`
 
